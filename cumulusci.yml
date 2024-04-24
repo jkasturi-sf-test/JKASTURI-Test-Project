@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: JKASTURI-Test-Project
+    package:
+        name: JKASTURI-Test-Project
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/JKASTURI-Test-Project/tests
+            options:
+                outputdir: robot/JKASTURI-Test-Project/results
+
+    robot_testdoc:
+        options:
+            path: robot/JKASTURI-Test-Project/tests
+            output: robot/JKASTURI-Test-Project/doc/JKASTURI-Test-Project_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
